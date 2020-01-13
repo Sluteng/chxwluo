@@ -1,0 +1,59 @@
+{extend name="index/base"/}
+{block name="tdk"} 
+{volist name="tdkResult" id="tdk"}
+{volist name="anliResult" id="anli"}
+{if $anli.title==null}
+<title>{$tdk.title}</title>
+{else}
+<title>{$anli.title}</title>
+{/if}
+<meta name="description" content="{$anli.description}" />
+{if $anli.keywords==null}
+<meta name="keywords" content="{$tdk.keywords}"/>
+{else}
+<meta name="keywords" content="{$anli.keywords}"/>
+{/if}
+{/volist}
+{/volist}
+{/block}
+{block name="css"} 
+<link rel="stylesheet" href="__CSS__/anli.css">
+{/block}
+{block name="content"}
+	<!-- 导航-->
+	{volist name="anliResult" id="anli"}
+	<div class="banner1">
+		<img src="__IMG__/gpanli.jpg" width="100%" height="100%">
+	</div>
+	<div class="case clearfix">
+		<h2 class="h-h2">{$anli.Name}</h2>
+		<div class="case-left">
+			<img src="{$anli.img}" alt="案例详情">
+		</div>
+		<div class="case-right">
+			<p><span>网站名称：</span>{$anli.Name}</p>
+			<p><span>网站定位：</span>{$anli.site}</p>
+			<p><span>网站链接：</span>{$anli.url}</p>
+			<p><span>合作时间：</span>{$anli.time}</p>
+			<p><span>项目介绍：</span>{$anli.content}</p>
+			<div class="more">
+				<a href="/contact.html">我要定制</a>
+			</div>
+		</div>
+		<div class="page clearfix">
+			{if $prev==null}
+			{else}
+			{volist name="prev" id="pre"}
+			<span class="fl">上一篇：<a href="/gpanli/{$pre.id}.html">{$pre.Name}</a></span>
+			{/volist}
+			{/if}
+			{if $next==null}
+			{else}
+			{volist name="next" id="nex"}
+			<span class="fr">下一篇：<a href="/gpanli/{$nex.id}.html">{$nex.Name}</a></span>
+			{/volist}
+			{/if}
+		</div>
+	</div>
+	{/volist}
+	{/block}

@@ -1,0 +1,109 @@
+﻿{extend name="index/base"/}
+{block name="tdk"} 
+{volist name="tdkResult" id="tdk"}
+{volist name="tdkwResult" id="tdkw"}
+{if $tdkw.title==null}
+<title>{$tdk.title}</title>
+{else}
+<title>{$tdkw.title}</title>
+{/if}
+<meta name="description" content="{$tdkw.description}" />
+{if $tdkw.keywords==null}
+<meta name="keywords" content="{$tdk.keywords}"/>
+{else}
+<meta name="keywords" content="{$tdkw.keywords}"/>
+{/if}
+{/volist}
+{/volist}
+{/block}
+{block name="content"}
+	<div class="catBody">
+		<div id="catTab" class="catTab">
+            <a class="curr catLabel" href="javascript:void(0);">联系方式</a>
+			<a class="catLabel" href="javascript:void(0);">洽谈业务</a>
+		</div>
+		<ul id="catQuery" class="catQuery">
+			<li class="catCon catContact">
+					{volist name="contactrResult" id="contactr"}
+					<div class="catConTop">
+					<div class="catContl">
+						<h2 class="catctlTitle">{$contactr.name}</h2>
+						<div class="catctlCon">
+                        <span style="color:#484848;font-family:'Microsoft Yahei';line-height:32px;background-color:#FFFFFF;">地址：{$contactr.url}</span><br />
+                        <span style="color:#484848;font-family:'Microsoft Yahei';line-height:32px;background-color:#FFFFFF;">电话：{$contactr.phone}</span><br />
+                        <span style="color:#484848;font-family:'Microsoft Yahei';line-height:32px;background-color:#FFFFFF;">手机：{$contactr.move}</span><br/>
+                        <span style="color:#484848;font-family:'Microsoft Yahei';line-height:32px;background-color:#FFFFFF;">传真：{$contactr.fax}</span><br />
+                        <span style="color:#484848;font-family:'Microsoft Yahei';line-height:32px;background-color:#FFFFFF;">网址：</span><a href=""target="_blank">{$contactr.site}</a><br />
+                        <span style="color:#484848;font-family:'Microsoft Yahei';line-height:32px;background-color:#FFFFFF;">商务合作：{$contactr.affairs}</span><br />
+                        <span style="color:#484848;font-family:'Microsoft Yahei';line-height:32px;background-color:#FFFFFF;">招聘：{$contactr.recruit}&nbsp;</span><br />
+                        <span id="qqLoginBtn"></span>
+                        </div>
+					</div>
+					<ul id="catContr" class="catContr">
+						<li class="catQrcode">
+							<a class="curr catqTab catqTabwx" href="javascript:void(0);">微信</a>
+							<div class="catqc"><img src="{$contactr.wechat_img}" title="扫一扫" alt="扫一扫" /></div>
+						</li>
+						<li class="catQrcode">
+							<a class="catqTab catqTabwb" href="javascript:void(0);">新浪微博</a>
+							<div class="catqc"><img src="{$contactr.blog_img}" title="扫一扫" alt="扫一扫"  /></div>
+						</li>
+					</ul>
+				</div>
+				{/volist}
+				<ul class="catConBottom">
+					{volist name="BusResult" id="bus"}
+					<li class="catBuss">
+						<h5 class="catbTitle">{$bus.title}</h5>
+						<div class="catbCon">{$bus.content}</div>
+					</li>
+					{/volist}
+				</ul>
+			</li>
+      <li class="catCon catWork">
+          <div id="UpdatePanel1">
+             <div class="catwHead"><span class="catwTitle">预约洽谈</span>（提交您的业务需求，我们的客户经理将及时与您取得联系）</div>
+              <span class='catwTip'></span>
+                <form action="/centers.html" enctype="multipart/form-data" method="post">
+                <div class="catwInput">
+                      <label for="">公司名称：<input name="company" type="text" id="comName" value='' placeholder="公司名称"/></label>
+                      <label for="">您的姓名：<input name="name" type="text" id="name" value=''  placeholder="姓名"/><span style="color: red;">*</span></label>
+                      <label for="">您的电话：<input name="phone" type="text" id="tel" value=''  placeholder="电话"/><span style="color: red;">*</span></label>
+                      <label for="">您的邮箱：<input name="mailbox" type="text" id="email" value=''  placeholder="邮箱"/></label>
+                      <label for=""><span>您的留言：</span><textarea name='content' id='mesinfo' value='' placeholder="请在这里输入您的留言！"></textarea><span style="color: red;">&nbsp;&nbsp;*</span></label>
+                      <span style="color: red; padding-left: 70px;">(带*号的为必填项)</span>    
+                </div>
+                    <div id="catwBtn" class="catwBtn">
+                      <span class="catwSubmit">
+                      <input type="submit" name="submit" value="提 交" class='catwBtnHover' id="put" />  
+                      </span>
+                    </div>
+                    </form>
+                    <br/>
+                    <span class='catwTip'>( 我们将会在1个工作日内给您回复，资料会保密处理！)</span>
+                  </div>
+            </li>
+		</ul>
+	</div>
+  <script>
+      $(function() {
+          $('#put').click(function() {
+              var name = ($('#name').val());
+              var tel = ($('#tel').val());
+              var mesinfo = ($('#mesinfo').val());
+              if (name == "") {
+                  alert('请输入您的姓名！');
+                  return false;
+              } else if (tel == "") {
+                  alert('请输入您的电话');
+                  return false;
+              } else if (mesinfo == "") {
+                  alert('请输入输入您的留言');
+                  return false;
+              } else {
+                  alert('提交成功');
+              };
+          })
+      })
+  </script>
+{/block}

@@ -1,0 +1,159 @@
+{extend name="index/base"/}
+{block name="tdk"} 
+{volist name="tdkResult" id="tdk"}
+{volist name="tdkgResult" id="tdkg"}
+{if $tdkg.title==null}
+<title>{$tdk.title}</title>
+{else}
+<title>{$tdkg.title}</title>
+{/if}
+<meta name="description" content="{$tdkg.description}" />
+{if $tdkg.keywords==null}
+<meta name="keywords" content="{$tdk.keywords}"/>
+{else}
+<meta name="keywords" content="{$tdkg.keywords}"/>
+{/if}
+{/volist}
+{/volist}
+{/block}
+{block name="css"} 
+<link rel="stylesheet" href="__CSS__/abouts.css">
+<link rel="stylesheet" href="__CSS__/abouts1.css">
+{/block}
+{block name="content"}<!-- 内容区域 -->
+<div class="aboutWrap">
+      <div class="aboutSide">
+    <div class="aboutSideTop"></div>
+    <input type="hidden" name="hidZhou" id="hidZhou" />
+    <div id="aboutSide" class="aboutSideLink"> <a href="javascript:void(0);" class="curr"></a> <a href="javascript:void(0);" class=""></a> <a href="javascript:void(0);" class=""></a> <a href="javascript:void(0);" class=""></a> <a href="javascript:void(0);" class=""></a> <a href="javascript:void(0);" class=""></a> <a href="javascript:void(0);" class=""></a> </div>
+    <div class="aboutSideBottom"></div>
+  </div>
+      <ul id="astepWrap" class="astepWrap">
+    <li class="astep astep_1">
+   {volist name="aboutsResult" id="abouts"}
+      {if $abouts.id==1}
+      {$abouts.editorValue|htmlspecialchars_decode}
+      <div class="img">
+       <img src="{$abouts.img}" alt="背景图">
+     </div>
+     {/if}
+     {/volist} 
+    </li>
+    <li class="astep astep_2">
+      {volist name="aboutsResult" id="abouts"}
+         {if $abouts.id==2}
+         {$abouts.editorValue|htmlspecialchars_decode}
+        {/if}
+        {/volist} 
+        </li>
+    <li class="astep astep_3">
+      {volist name="aboutsResult" id="abouts"}
+         {if $abouts.id==3}
+         {$abouts.editorValue|htmlspecialchars_decode}
+      <div class="img">
+        <img src="{$abouts.img}" alt="背景图">
+      </div>
+      {/if}
+      {/volist} 
+        </li>
+    <li class="astep astep_4">
+      {volist name="goodResult" id="good" length='1'}
+          <h4 class="asTitle">{$good.title}</h4>
+        {/volist} 
+        <ul class="asSup">
+        {volist name="goodResult" id="good"}
+        <li class="asSupl">
+              <h5 class="asSuplTitle">{$good.titles}</h5>
+              <div class="asSuplIntro">{$good.content}<br/>
+          </div>
+            </li>
+        {/volist}
+      </ul>
+        </li>
+    <li class="astep astep_5"> <a id="asPrev" href="javascript:void(0);" class="as5Prev"></a> <a id="asNext" href="javascript:void(0);" class="as5Next"></a>
+          <ul id="as5Query" class="as5Query">
+        {volist name="bannersResult" id="banners"}
+        <li><img src="{$banners.banner_img}" alt="{if $key==0}moumou-信誉{/if}{if $key==1}moumou-创新{/if}{if $key==2}moumou-实干{/if}" title="{if $key==0}moumou-信誉{/if}{if $key==1}moumou-创新{/if}{if $key==2}moumou-实干{/if}" /></li>
+        {/volist}
+      </ul>
+        </li>
+    <li class="astep astep_6">
+      {volist name="cultureResult" id="culture"}
+          <h4 class="asTitle">{$culture.title}</h4>
+        <div class="asContent">
+        <p><span style="font-size:12px;line-height:18px;">{$culture.content}</span></p>
+      </div>
+      {/volist}
+        </li>
+    <li class="astep astep_7">
+      {volist name="aboutsResult" id="abouts"}
+         {if $abouts.id==4}
+        <div class="as7Wrap asContent"><br>
+          {$abouts.editorValue|htmlspecialchars_decode}
+      </div>
+      <div class="img">
+        <img src="{$abouts.img}" alt="背景图">
+      </div>
+      {/if}
+      {/volist} 
+      </li>
+  </ul>
+    </div>
+    {/block}
+    {block name="script"}
+  <script>
+    $('.section5 .bg53 a').hover(function(){
+      $('.section5 .bg53 a i').addClass('on');
+    },
+      function(){
+        $('.section5 .bg53 a i').removeClass('on');
+      }
+    )
+    
+    $('.section3 .bg32 .img1').hover(function(){
+      $(this).attr('src','http://www.km-jz.cn/templets/lanse/img1/bg_33.gif')
+    },
+    function(){
+       $(this).attr('src','http://www.km-jz.cnimages/bg_33_h.gif')
+      }
+    )
+    $('.section3 .bg32 .img2').hover(function(){
+      $(this).attr('src','http://www.km-jz.cn/templets/lanse/img1/bg_34.gif')
+    },
+    function(){
+       $(this).attr('src','http://www.km-jz.cnimages/bg_34_h.gif')
+      }
+    )
+    $('.section3 .bg32 .img3').hover(function(){
+      $(this).attr('src','http://www.km-jz.cn/templets/lanse/img1/bg_35.gif')
+    },
+    function(){
+       $(this).attr('src','http://www.km-jz.cnimages/bg_35_h.gif')
+      }
+    )
+    $('.section3 .bg32 .img4').hover(function(){
+      $(this).attr('src','http://www.km-jz.cn/templets/lanse/img1/bg_36.gif')
+    },
+    function(){
+       $(this).attr('src','http://www.km-jz.cnimages/bg_36_h.gif')
+      }
+    )
+    
+    $(window).load(function(){
+      var hh = $('.section5 .bg521').height();
+      $('.section5 .bg522').height(hh);
+    })
+    function showImg() 
+    { 
+        if($('.section2 .bg23 .bg232').css('display') == "none")    
+           $('.section2 .bg23 .bg232').fadeIn(200) 
+        else 
+            $('.section2 .bg23 .bg232').fadeOut(200)  
+        setTimeout('showImg()',300);               
+    } 
+    showImg(); 
+    </script> 
+    <script type="text/javascript" src="__JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__JS__/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="__JS__/pictureViewer.js"></script>
+{/block}

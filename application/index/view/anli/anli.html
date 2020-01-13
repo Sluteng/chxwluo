@@ -1,0 +1,61 @@
+﻿{extend name="index/base"/}
+{block name="tdk"} 
+{volist name="tdkResult" id="tdk"}
+{volist name="tdkaResult" id="tdka"}
+{if $tdka.title==null}
+<title>{$tdk.title}</title>
+{else}
+<title>{$tdka.title}</title>
+{/if}
+<meta name="description" content="{$tdka.description}" />
+{if $tdka.keywords==null}
+<meta name="keywords" content="{$tdk.keywords}"/>
+{else}
+<meta name="keywords" content="{$tdka.keywords}"/>
+{/if}
+{/volist}
+{/volist}
+{/block}
+{block name="css"} 
+<link rel="stylesheet" href="__CSS__/anli.css">
+{/block}
+{block name="content"}
+	<div class="about_cont_a">
+		<div class="about_cont_aa"></div>
+		<div class="about_cont_vc"></div>
+		<div class="main">
+			<div class="about_conta_top">
+				<div class="about_conta_topl">
+					<img width="382" height="60" src="__PCE__/case_a.jpg" />
+				</div>
+			</div>
+			<div class="coll">
+				<div class="clBody">
+					<div class="image-list">
+						<div class="">
+							<ul class="csQuery">
+							  {volist name="anliResult" id="anli"}
+								<li data-type="4" class="csli"> <a href="/gpanli/{$anli.id}.html"><img id="notification-triggera" src="{$anli.img}" width="273" height="330" /></a> 
+									<a class="cslName" href="/gpanli/{$anli.id}.html">{$anli.Name}</a>
+									<div class="cslDate">{$anli.create_time|date="Y-m-d",###}</div>
+								</li>
+							   {/volist} 
+							</ul>
+						</div>
+						<img src="__IMG__/noInfo.png" style=" display:none; margin:0 auto;" />
+						<div class="nav">
+							{if $page==null}
+							{else}
+						    <div class="sort-page">
+						        <a href="/anlf/1.html" class="page">首页</a>
+						        {$page}
+						        <a href="/anlf/{$max}.html" class="page">末页</a>
+						    </div>
+                            {/if}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	 </div>
+{/block}

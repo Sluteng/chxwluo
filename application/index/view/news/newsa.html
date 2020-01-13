@@ -1,0 +1,56 @@
+{extend name="index/base"/}
+{block name="tdk"} 
+{volist name="tdkResult" id="tdk"}
+{volist name="newsResult" id="news"}
+{if $news.title==null}
+<title>{$tdk.title}</title>
+{else}
+<title>{$news.title}</title>
+{/if}
+<meta name="description" content="{$news.description}" />
+{if $news.keywords==null}
+<meta name="keywords" content="{$tdk.keywords}"/>
+{else}
+<meta name="keywords" content="{$news.keywords}"/>
+{/if}
+{/volist}
+{/volist}
+{/block}
+{block name="css"} 
+<link rel="stylesheet" type="text/css" href="__CSS__/common.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/news.css">
+{/block}
+{block name="content"}
+	<div class="news1 gwidth">
+		<div class="fade_block fade_left" fade-name="fade_left" style="visibility: visible; animation-name: fade_left;">
+			 {volist name="newsResult" id="news"}
+				<h1>{$news.titles}</h1>
+	            {$news.editorValue|htmlspecialchars_decode} 
+	            {/volist}
+				<div class="fy">
+					
+					<div class="left">
+						{if $prev==null}
+						<a href="">已到顶部</a>
+						{else}
+						{volist name="prev" id="pre"}
+						<a href="/newsa/{$pre.id}.html">上一篇：{$pre.titles}</a>
+						{/volist}
+						{/if}
+					</div>
+					<div class="right">
+                        {if $next==null}
+						<a href="">已到尾部</a>
+						{else}
+						{volist name="next" id="nex"}
+						<a href="/newsa/{$nex.id}.html">下一篇：{$nex.titles}</a>
+						{/volist}
+						{/if}
+					</div>
+				</div>
+			</div>
+		</div>
+{/block}
+{block name="script"}
+<script src="__JS__/online.js" type="text/javascript"></script>
+{/block}

@@ -1,0 +1,137 @@
+﻿{extend name="index/base"/}
+{block name="content"}
+        <div class="banner">
+            <div id="bannerQuery" class="bwrap">
+                <ul class="bquery">
+                    {volist name="bannerResult" id="banner"}
+                    <li class="blist">
+                        <a href="{$banner.banner_href}">
+                            <img src="{$banner.banner_img}" height="570" width="1920" title="banner01" alt="" />
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+            <div class="bctrl">
+                <div id="bannerCtrl" class="bctrli"></div>
+            </div>
+        </div>
+        <div class="service">
+            <ul id="service" class="serQuery">
+                {volist name="serviceResult" id="service"}
+                <li class="serLi">
+                    <div class="serWrap">
+                        <div class="serIco">
+                            <img src="{$service.img}" width="103" height="103">
+                        </div>
+                         <h4 class="serTitle">{$service.title}</h4>
+                        <div class="serIntro"><span class="a1">{$service.titles}</span></div>
+                        <div class="serLink"> <a class="serBtn" href="/service.html"><span class="serBtnLink">查看详情</span><span class="serBtnHover">查看详情</span></a> 
+                        </div>
+                    </div>
+                </li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="introShow">
+            <div class="icaseWrap">
+                <div class="icaseHeader"> <a class="icaseDetLink" href="./anli/anli.html">MORE</a>
+
+                    <div class="icaseName">项目案例</div>
+                </div>
+                <div id="caseSwitch" class="icaseBody">
+                    <dl class="icaseLeft"> <dt class="icaseLeftTitle">案例推荐</dt>
+
+                        <dd class="icaseLeftIntro">
+                            <a class="icasebPrev" href="javascript:void(0);" title="上一张"></a>
+                            <a class="icasebNext" href="javascript:void(0);" title="下一张"></a>
+                            <ul class="icaseBanner">
+                                {volist name="anliResult" id="anli"}
+                                <li class="icasebli">
+                                    <a class="icasePic" href="/gpanli/{$anli.id}.html" target="_blank">
+                                        <img src="{$anli.logo}" alt="{$anli.Name}" width="402" height="259" title="" />
+                                    </a>
+                                    <div class="icaseInfo">
+                                         <h4 class="icaseTitle">{$anli.Name}</h4>
+                                         <span class="icaseDate">{$anli.create_time|date="Y-m-d",###}</span> 
+                                    </div>
+                                    <div class="icaseIntro">
+                                        <p>行业：推荐</p>
+                                        <p>{$anli.content}</p>
+                                    </div>
+                                </li>
+                                {/volist}
+                            </ul>
+                        </dd>
+                    </dl>
+                    <ul id="icaseRight" class="icaseRight">
+                        {volist name="anlisResult" id="anlis"}
+                        <li class="icaserQuery"> <a class="icaserTitle" href="/gpanli/{$anlis.id}.html" target="_blank">{$anlis.Name}</a>  <span class="icaserDate">{$anlis.create_time|date="Y-m-d",###}</span>
+                            <div class="icaserPic">
+                                <img src="{$anlis.logo}" width="284" height="180" title="{$anlis.Name}" alt="{$anlis.Name}" /> 
+                            </div>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+            </div>
+            <div class="iaAndn">
+                <div id="iabout" class="iabout">
+                    <div class="iaHeader">
+                        <a class="iaPrev" href="javascript:void(0);" title="上一个"></a>
+                        <a class="iaNext" href="javascript:void(0);" title="下一个"></a>
+                    </div>
+                    <ul class="iaQuery">
+                        {volist name="aboutResult" id="about"}
+                        <li class="iaList">
+                            <div class="iaName"><span class="iaNameEn">ABOUT US</span><span class="iaNameCn">company概况</span>
+                            </div>
+                            <div class="iaBody">
+                                <div class="iaPic">
+                                    <a href="/abouts.html">
+                                        <img src="{$about.img}" width="365" height="300" />
+                                    </a> <span class="iaPicMask"></span>  <span class="iaPicName">{$about.theme}</span> 
+                                </div>
+                                <div class="iaIntro">
+                                     <h4 class="iaTitle">{$about.title}</h4>
+                                    <div class="iaContent">{$about.content}</div>
+                                </div>
+                            </div>
+                        </li>
+                        {/volist}
+                    </ul>
+                    <div class="iaCtrl"></div>
+                </div>
+                <div id="iNews" class="iNews">
+                    <div class="inHeader"> <a class="inMore" href="/news.html">更多</a> 
+                    <span class="inNameEn">NEWS</span> <span class="inNameCn">company动态</span> 
+                    </div>
+                    <div class="inQueryWrap">
+                        <ul class="inQuery">
+                            {volist name="newsResult" id="news"}
+                            <li class="inList">
+                                <div class="inLableDate"><span class="indDay">{$news.update_time|date="d",###}</span><span class="indMonth">Sep.</span>
+                                </div> <span class="inDate">{$news.update_time|date="Y年m月d日",###}</span> <a href="/newsa/{$news.id}.html" target="_blank" class="inTitle" title="">{$news.titles}</a>
+                                <div class="inIntro">{$news.editorValue|htmlspecialchars_decode|strip_tags}</div>
+                            </li>
+                            {/volist}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="picLink clearfix">
+            <ul id="plQuery" class="plQuery">
+                {volist name="yqlogoResult" id="yq"}
+                <li class="plList">
+                    <a>
+                        <img class="plColor" src="{$yq.logo}" width="199" height="78"  title="合作伙伴" alt="合作伙伴">
+                    </a>
+                </li>
+                {/volist}
+            </ul>
+        </div>
+{/block}
+{block name="script"}
+<script type="text/javascript" src="__JS__/index.js"></script>
+{/block}

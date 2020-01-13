@@ -1,0 +1,59 @@
+﻿{extend name="index/base"/}
+{block name="tdk"} 
+{volist name="tdkResult" id="tdk"}
+{volist name="tdkdResult" id="tdkd"}
+{if $tdkd.title==null}
+<title>{$tdk.title}</title>
+{else}
+<title>{$tdkd.title}</title>
+{/if}
+<meta name="description" content="{$tdkd.description}" />
+{if $tdkd.keywords==null}
+<meta name="keywords" content="{$tdk.keywords}"/>
+{else}
+<meta name="keywords" content="{$tdkd.keywords}"/>
+{/if}
+{/volist}
+{/volist}
+{/block}
+{block name="content"}
+<div class="body grey" >
+<div class="nqBody">
+  <div class="nqType">
+    <ul class="nqtWrap">
+       {volist name="newdResult" id="newd"}
+       {if $aa=='news'}
+      <li class="{if $newd.id==$tid}active{/if}"><a href='/newd/{$newd.id}.html'>{$newd.titles}</a></li>
+        {else}
+       <li class="{if $url==$newd.id}active{/if}"><a href='/newd/{$newd.id}.html'>{$newd.titles}</a></li>
+       {/if}
+       {/volist}
+    </ul>
+    <span class="nqpNameCn">动态</span> <span class="nqpNameEn">NEWS</span> </div>
+  <ul id="nqlWrap" class="nqlWrap">
+    {volist name="newsResult" id="news"}
+    <li class="nqli">
+      <div class="nqlDate"><span class="nqldDay">{if $news.id<=9}0{$news.id}{else}{$news.id}{/if}</span><span class="nqldMy">{$news.update_time|date="Y-m",###}</span></div>
+      <a class="nqlTitle" href="/newsa/{$news.id}.html">{$news.titles}</a>
+      <div class="nqlSum">{$news.editorValue|htmlspecialchars_decode|strip_tags}</div>
+      <div class="nqlDetDate">{$news.update_time|date="Y-m-d",###}</div>
+    </li>
+    {/volist}
+  </ul>
+  <img src="../picture/noinfo.png" style=" display:none; margin:0 auto;" />
+      <div class="nav">
+        {if $page==null}
+        {else}
+          <div class="sort-page">
+              <a href="{$head}" class="page">首页</a>
+              {$page}
+              <a href="{$tail}" class="page">末页</a>
+          </div>
+        {/if}
+      </div>
+</div>
+</div>
+{/block}
+{block name="script"}
+<script src="__JS__/online.js" type="text/javascript"></script>
+{/block}

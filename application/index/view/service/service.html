@@ -1,0 +1,47 @@
+﻿{extend name="index/base"/}
+{block name="tdk"} 
+{volist name="tdkResult" id="tdk"}
+{volist name="tdkfResult" id="tdkf"}
+{if $tdkf.title==null}
+<title>{$tdk.title}</title>
+{else}
+<title>{$tdkf.title}</title>
+{/if}
+<meta name="description" content="{$tdkf.description}" />
+{if $tdkf.keywords==null}
+<meta name="keywords" content="{$tdk.keywords}"/>
+{else}
+<meta name="keywords" content="{$tdkf.keywords}"/>
+{/if}
+{/volist}
+{/volist}
+{/block}
+{block name="content"}
+<script type="text/javascript" src="__JS__/page.js"></script>
+<div class="serBody">
+  <ul id="serlist" class="serlist">
+    {volist name="serviceResult" id="service"}
+    <li class="serli">
+      <div class="serLeft">
+        <div class="serlIco"><img src="{$service.img}" alt="{$service.titles}" title="{$service.titles}" width="103" height="103"></div>
+        <h2 class="serlTitle">{$service.title}</h2>
+      </div>
+      <div class="serRight">
+        <div class="serLabel"><span>{$service.titles}</span></div>
+        <div class="serSum">{$service.editorValue|htmlspecialchars_decode}</div>
+        <div class="serCon">
+         {$service.editorValue|htmlspecialchars_decode}
+        </div>
+        <a class="serDet"  id="serLi" href="javascript:void(0);"> <span class="serdLink">查看详情</span><span class="serdHover">查看详情</span> </a> </div>
+    </li>
+    {/volist}
+  </ul>
+</div>
+<div id="serDetaile" class="serDetaile"> <a href="javascript:void(0);javascript:location.reload();" class="sdCloseBtn"></a>
+  <h4 class="sdTitle"></h4>
+  <div class="sdContent">
+    <div class="sdContentInner"></div>
+  </div>
+</div>
+<div id="mask" class="mask"></div>
+{/block}

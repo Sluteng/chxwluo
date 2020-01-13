@@ -1,0 +1,196 @@
+/* 介绍 */
+.about_cont_a{
+	position:relative;
+	overflow:hidden;
+	padding-bottom:30px;
+}
+/* 下划线 */
+.about_cont_vc{
+	width:50%;
+	position:absolute;
+	left:0;
+	top:152px;
+	background:#909090;
+	height:1px;
+	margin-left:-345px;
+}
+/* 斜线 */
+.about_cont_aa{
+	position:absolute;
+	left:50%;
+	top:0px;
+	margin-left:-551px;
+	background:url(../picture/case_ee.jpg) no-repeat;
+	width:292px;
+	height:430px;
+	z-index:-1;
+}
+.about_conta_top{
+	padding-top:60px;
+	overflow:hidden;
+}
+.about_conta_topl{
+	float:left;
+    padding-top:15px;
+    margin-left:430px;
+}
+/*案例页开始*/
+.clBody{position: relative; width:  1000px; margin: 36px auto 20px; padding: 0 0 66px; }
+.csQuery{position: relative; overflow: hidden; padding: 42px 0 50px 31px; }
+
+.csli{position: relative; float: left; width: 271px; height: 391px; overflow: hidden; margin: 0 9px 18px; padding: 13px 13px 0; box-shadow: 2px 2px 2px #dddddd,-2px -2px 2px #dadada; background: #ffffff; }
+
+.cslPic{display: block; width: 273px; height: 205px; overflow: hidden; margin: 0 0 16px; font-size: 0; line-height: 0; background: #000000;border:2px solid #ededed;}
+/* .csli:hover img{opacity: 0.4; filter: alpha( opacity = 40 );  } */
+.cslPic :hover{ transform: scale(1.2);transition: .8s; }
+.cslPic img{
+	display: block;
+}
+.cslName{line-height: 24px; color: #000000; font-size: 14px; text-decoration: none; }
+.cslDate{color: #929292; line-height: 20px; }
+.cslSum{padding: 10px 0 44px; line-height: 24px; color: #414141; }
+/*.csli:hover .cslLink{background-color: #d21f3d; }*/
+
+.caseHeader{position: fixed; top: 0; left: 0; right: 0; z-index: 9; height: 58px; background: url(../images/case_header.png) repeat-x left center; }
+.caseHeaderWrap{width: 1000px; height: 56px; margin: 0 auto; }
+.chLeft{float: left; font-size: 0; line-height: 0; }
+.caseList{float: left; }
+.caseList a{display: block; width: 61px; height: 53px; background: #000000 url(../images/side_show.png) no-repeat center center; }
+.casePrev{float: left; margin: 0 0 0 1px; }
+.casePrev a{display: block; width: 57px; height: 53px; background: #000000 url(../images/case_arrow.png) no-repeat 20px center; }
+.caseNext{float: left; margin: 0 0 0 1px; }
+.caseNext a{display: block; width: 57px; height: 53px; background: #000000 url(../images/case_arrow.png) no-repeat -36px center; }
+/*.casePrev:hover,
+.caseNext:hover{background-color: #b70b2c; }*/
+
+.chRight{float: right; }
+.chRight li{position: relative; float: left; width: 62px; height: 53px; margin: 0 1px 0 0; overflow: hidden; background: #000000;  }
+.chShareWb,
+.chShareTx,
+.chShareQz,
+.chShareWx{position: absolute; top: 0; left: 0; width: 62px; height: 106px; background: url(../images/case_share.png) no-repeat center top; }
+/*.chShareWb:hover,
+.chShareTx:hover,
+.chShareQz:hover,
+.chShareWx:hover{background-color: #b70b2c; }*/
+.chShareWb{background-position: center top; }
+/*.chShareWb:hover{background-position: center -53px; }*/
+.chShareTx{background-position: center -106px; }
+/*.chShareTx:hover{background-position: center -159px; }*/
+.chShareQz{background-position: center -212px; }
+/*.chShareQz:hover{background-position: center -265px; }*/
+.chShareWx{background-position: center -318px; }
+/*.chShareWx:hover{background-position: center -371px; }*/
+
+.caseDetBanner{height: 492px; position: relative; z-index: 0; width: 100%; overflow: hidden; /*background: url(../images/case_top.png) no-repeat center center;*/ }
+.caseDbinner{position: absolute; left: 50%; width: 1920px; margin-left: -960px; text-align: center; }
+/* .caseDbinner img{ } */
+.caseDetBody{margin: 0 0 24px; padding: 36px 0 0px; /*background: #ececec; */}
+.casedbWrap{width: 1000px; margin: 0 auto;}
+
+.casedTop{height: 38px; border-bottom: 1px solid #7f6776; padding: 46px 162px 0; background: url(../images/case_logo.png) no-repeat 50px 42px; line-height: 24px; color: #ffffff; }
+/* .casedQuery{ } */
+.casedList{padding: 0px 0; text-align: center; font-size: 0; line-height: 0;}
+.casedList img{width: 100%; }
+.casedBottom{height: 52px; border-bottom: 1px solid #7f6776; padding: 32px 162px 0; background: url(../images/case_logo.png) no-repeat 50px 28px; line-height: 24px; color: #ffffff; }
+/*案例页结束*/
+
+
+
+
+/* 案例详情页  */
+.case{
+	padding-bottom: 50px;
+	width: 1200px;
+	margin: auto;
+}
+.case .h-h2{
+	padding: 25px 0;
+	text-align: center;
+	font-size: 24px;
+}
+.case-left{
+	float: left;
+	width: 50%;
+	padding: 0 50px;
+	min-height: 500px;
+	max-height: 800px;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+.case-left img{
+	width: 100%;
+}
+.case .case-right{
+	padding: 0 50px;
+	padding-top: 20px;
+	float: left;
+	width: 50%;
+	height: 800px;
+	box-sizing: border-box;
+}
+.case .case-right p{
+	font-size: 14px;
+	line-height: 24px;
+    margin-bottom: 10px;
+}
+.case .case-right p span{
+	font-weight: bold;
+}
+.more a{
+    display: inline-block;
+    padding: 10px 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color: blue;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+.more{
+	margin-top: 30px;
+    text-align: center;
+}
+.page .fl{
+    float: left;
+}
+.page .fr{
+    float: right;
+}
+.page{
+    font-size: 14px;
+}
+.page span{
+    margin-top: 20px;
+}
+/*.case .anli{ border-radius:5px;border:1px solidred;padding:10px;margin-left: 200px; margin-top: 50px;}*/
+/*.case #test{min-height:300px;overflow-y:auto;max-height:800px;width: 60%;border: 1px solid;float: left;width: 60%; margin-bottom:50px; }*/
+/*.case #test img{*/
+	/*width: 100%;*/
+/*}*/
+/*.case .right{*/
+	/*width: 28%;*/
+	/*float: left;*/
+	/*margin-left: 30px;*/
+/*}*/
+/*.case .anli_text{*/
+	/*font-size:16px;*/
+	/*line-height:40px;*/
+	/*width:80%;*/
+	/**/
+/*}*/
+/*.case .anli_text .anliText{*/
+	/*font-weight: bold;*/
+/*}*/
+/*.case .right a{*/
+	/*font-size: 20px;*/
+	/*margin-left: 50px;*/
+	/*padding: 10px 20px 10px 20px;*/
+	/*background-color: #ccc;*/
+	/*border-radius: 100px;*/
+	/*color: black;*/
+/*}*/
+/*.case .right a:hover{*/
+		/*background-color: #1d5cbc;*/
+		/*color: white;*/
+/*}*/

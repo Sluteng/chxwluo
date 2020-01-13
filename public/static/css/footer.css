@@ -1,0 +1,44 @@
+footer*/
+/*友情logo*/
+.footer{background-color: #232323; }
+.footerWrap{overflow: hidden; width: 100%; margin: 0 auto; padding: 20px 0 16px; line-height: 24px; color: #717171; }
+/*footer*/
+.footerWrap p{ margin-left:47px;
+}
+/*图片友链开始*/
+.picLink{overflow: hidden; width: 1001px; height: 78px; margin: 0 auto 18px; border: 1px solid #eaeaea; border-left: none; }
+.plQuery{overflow: hidden; height: 78px; }
+.plList{float: left; width: 199px; height: 78px; border-left: 1px solid #eaeaea; }
+.plList a{display: block; position: relative; width: 199px; height: 78px; font-size: 0; line-height: 0; }
+.plGrey{position: absolute; left: 0; top: 0; z-index: 9; }
+.plColor{position: absolute; left: 0; top: 0; z-index: 1; }
+/*图片友链结束*/
+
+/*底部网站地图开始*/
+.webSite{width: 100%; margin: 0 auto;  overflow: hidden; padding: 28px 0 32px; background: #353434; }
+.wsLink{width:1004px; margin:auto; }
+.wslList{float: left; margin: 0 50px 0 62px;}
+
+.wslName{font-size: 14px; color: #ffffff; line-height: 24px; }
+.wslcQuery{padding: 8px 0 0; }
+/* .wslcQuery li{ } */
+.wslcQuery a{line-height: 24px; color: #eeeeee;  text-decoration: none; }
+
+.wsContact{float: left; padding: 25px 0 0 30px; color: #000000; font-size: 16px; line-height: 28px; }
+.wsContact li{overflow: hidden; }
+.wscKey{float: left; position: absolute; right: 345px;}
+.wscVal{float: left; color: #2568c0; }
+/*底部网站地图结束*/
+
+/*文字友情链接开始*/
+.textLink{width:1004px;margin:auto; border-top: none; background: #353434; }
+.back{width:998px;background:#353434;margin-left: 30px;}
+.tlHeader{ width: 998px; padding: 8px 0 14px 18px; font-size: 14px; color: #ccc; line-height: 25px; }
+.tlHeader span{width:1001px;}
+.fengexian{margin-left:-21%;background:linear-gradient(to left,#efefef,#b6b6b6,#efefef);height:1px;margin-top:200px;}
+.tlNameEn{color: #b6b6b6; }
+.linkQuery{width:1000px;overflow: hidden;margin-left: 20px; }
+.linkQuery li{ float: left; margin: 0 0px 0 30px; }
+.linkQuery a{color: #717171; text-decoration: none; line-height: 24px;display: block; }
+.linkQuery a:hover{color: #fff; }
+/*文字友情链接结束
